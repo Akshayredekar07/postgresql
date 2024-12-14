@@ -1,1 +1,5 @@
 https://neon.tech/postgresql/postgresql-tutorial/postgresql-select
+
+https://www.w3schools.com/postgresql/postgresql_alter_column.php
+
+https://www.w3schools.com/postgresql/postgresql_alter_column.php

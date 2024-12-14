@@ -141,3 +141,154 @@ WHERE brand = 'Toyota';
 ```plaintext
 UPDATE 1
 ```
+
+**PostgreSQL ALTER COLUMN**
+
+**The ALTER TABLE Statement**  
+The `ALTER TABLE` statement is used to add, delete, or modify columns in an existing table.  
+
+The `ALTER TABLE` statement is also used to add and drop various constraints on an existing table.  
+
+---
+
+**ALTER COLUMN**  
+To change the data type of a column, use the `ALTER COLUMN` statement and the `TYPE` keyword followed by the new data type.  
+
+**Example**  
+Change the `year` column of the `cars` table from `INT` to `VARCHAR(4)`:  
+```sql
+ALTER TABLE cars
+ALTER COLUMN year TYPE VARCHAR(4);
+```  
+**Result**  
+```plaintext
+ALTER TABLE
+```  
+**Note**  
+Some data types cannot be converted if the column has value. E.g., numbers can always be converted to text, but text cannot always be converted to numbers.  
+
+---
+
+**Change Maximum Allowed Characters**  
+To modify the maximum number of characters allowed in a column, use the same syntax as above.  
+
+**Example**  
+Change the `color` column from `VARCHAR(255)` to `VARCHAR(30)`:  
+```sql
+ALTER TABLE cars
+ALTER COLUMN color TYPE VARCHAR(30);
+```  
+
+
+**PostgreSQL DROP COLUMN**  
+
+**The ALTER TABLE Statement**  
+To remove a column from a table, we have to use the ALTER TABLE statement.  
+
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.  
+
+The ALTER TABLE statement is also used to add and drop various constraints on an existing table.  
+
+**DROP COLUMN**  
+We want to remove the column named `color` from the `cars` table.  
+
+To remove a column, use the `DROP COLUMN` statement:  
+
+**Example**  
+Remove the `color` column:  
+```sql
+ALTER TABLE cars  
+DROP COLUMN color;
+```
+
+**Result**  
+`ALTER TABLE`  
+
+**Display Table**  
+To check the result we can display the table with this SQL statement:  
+
+**Example**  
+```sql
+SELECT * FROM cars;
+```  
+
+---
+
+**PostgreSQL DELETE**  
+
+**The DELETE Statement**  
+The DELETE statement is used to delete existing records in a table.  
+
+Note: Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. The WHERE clause specifies which record(s) should be deleted.  
+
+If you omit the WHERE clause, all records in the table will be deleted!  
+
+**Example**  
+Delete all records where brand is 'Volvo':  
+```sql
+DELETE FROM cars  
+WHERE brand = 'Volvo';
+```
+
+**Delete All Records**  
+It is possible to delete all rows in a table without deleting the table. This means that the table structure, attributes, and indexes will be intact.  
+
+**Example**  
+Delete all records in the cars table:  
+```sql
+DELETE FROM cars;
+```
+
+**Result**  
+`DELETE 3`  
+Which means that all 3 rows were deleted.  
+
+**Display Table**  
+To check the result we can display the table with this SQL statement:  
+
+**Example**  
+```sql
+SELECT * FROM cars;
+```  
+
+**TRUNCATE TABLE**  
+Because we omit the WHERE clause in the DELETE statement above, all records will be deleted from the cars table.  
+
+The same would have been achieved by using the TRUNCATE TABLE statement:  
+
+**Example**  
+Delete all records in the cars table:  
+```sql
+TRUNCATE TABLE cars;
+```  
+
+**PostgreSQL DROP TABLE**  
+
+**The DROP TABLE Statement**  
+The DROP TABLE statement is used to drop an existing table in a database.  
+
+Note: Be careful before dropping a table. Deleting a table will result in the loss of all information stored in the table!  
+
+**Example**  
+Delete the cars table:  
+```sql
+DROP TABLE cars;
+```
+
+**Result**  
+`DROP TABLE`  
+
+**Display Table**  
+To check the result we can display the table with this SQL statement:  
+
+**Example**  
+```sql
+SELECT * FROM cars;
+```  
+
+**Result**  
+```
+ERROR: relation "cars" does not exist  
+LINE 1: SELECT * FROM cars;  
+                      ^
+```  
