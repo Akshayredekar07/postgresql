@@ -5,6 +5,7 @@ PostgreSQL supports both relational (SQL) and non-relational (JSON) queries.
 PostgreSQL is free and open-source.
 
 **What is PostgreSQL?**
+
 PostgreSQL is an free open-source database system that supports both relational (SQL) and non-relational (JSON) queries.
 
 PostgreSQL is a back-end database for dynamic websites and web applications.
